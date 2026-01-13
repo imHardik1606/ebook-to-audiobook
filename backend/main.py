@@ -73,12 +73,17 @@ async def extract_text(file: UploadFile = File(...)):
     content_started = False
 
     with pdfplumber.open(io.BytesIO(content)) as pdf:
+        is_small_pdf = len(pdf.pages) <= 2
         for page in pdf.pages:
             raw_text = page.extract_text()
             if not raw_text:
                 continue
 
             cleaned = clean_page_text(raw_text)
+
+            if is_small_pdf:
+                final_text.append(cleaned)
+                continue
 
             # Skip front matter until actual content starts
             if not content_started:
