@@ -81,6 +81,7 @@ async def extract_text(file: UploadFile = File(...)):
 
             cleaned = clean_page_text(raw_text)
 
+            # If small PDF, include all text
             if is_small_pdf:
                 final_text.append(cleaned)
                 continue

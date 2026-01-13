@@ -249,7 +249,7 @@
                 <div className="space-y-8">
                   {/* Audio Player */}
                   {conversionComplete && audioUrl && (
-                    <div className="bg-linear-to-br from-blue-500 to-indigo-500 font-mono rounded-2xl p-8 text-white shadow-xl h-fit w-full scroll-auto">
+                    <div className="bg-linear-to-br from-blue-500 to-indigo-500 font-mono rounded-2xl p-8 text-white shadow-xl h-64 w-full overflow-auto scroll-auto">
                       {text}
                     </div>
                   )}
@@ -292,44 +292,6 @@
                     <p className="text-slate-600">{feature.description}</p>
                   </div>
                 ))}
-              </div>
-            </section>
-
-            {/* Text Preview Section */}
-            {text && (
-              <section className="mb-12">
-                <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
-                  <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-bold text-slate-800">Extracted Text Preview</h2>
-                    <div className="px-4 py-2 bg-green-100 text-green-700 rounded-full font-medium flex items-center">
-                      <CheckCircle className="h-4 w-4 mr-2" />
-                      Text Extracted Successfully
-                    </div>
-                  </div>
-                  <div className="bg-slate-50 rounded-xl p-6 max-h-96 overflow-y-auto">
-                    <pre className="text-slate-700 whitespace-pre-wrap font-sans text-sm leading-relaxed">
-                      {text.length > 1000 ? `${text.substring(0, 1000)}...` : text}
-                    </pre>
-                  </div>
-                </div>
-              </section>
-            )}
-
-            {/* CTA Section */}
-            <section className="text-center py-12 bg-linear-to-r from-blue-500 to-indigo-500 rounded-3xl text-white">
-              <div className="max-w-2xl mx-auto px-4">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Start Listening to Your Books Today</h2>
-                <p className="text-blue-100 mb-8 text-lg">
-                  Join thousands of readers who have transformed their reading experience
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="px-8 py-4 bg-white text-blue-600 rounded-xl font-bold text-lg hover:bg-blue-50 transition shadow-lg">
-                    Try It Free
-                  </button>
-                  <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white/10 transition">
-                    View Pricing
-                  </button>
-                </div>
               </div>
             </section>
           </div>
